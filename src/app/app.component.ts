@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UserService} from "./services/user.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular_OKTEN';
+  title = 'Hello OKTEN';
+
+  // private xxx: UserService;
+  // constructor(xxx: UserService) {
+  //   this.xxx = xxx;
+  //   this.xxx.doSomeStuff();
+  // }
+
+  //   constructor(private xxx: UserService) {            //короткая запись, через запятую можно подключить и др. сервисы
+  //      this.xxx.doSomeStuff();
+  // }
+
+
 }
