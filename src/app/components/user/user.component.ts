@@ -7,8 +7,12 @@ import {UserModel} from "../../models/UserModel";
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+
+
   @Input()
   userObj: UserModel;
+
+
   constructor() { }
 
   ngOnInit(): void {
