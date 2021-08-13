@@ -27,10 +27,11 @@
 }
 
 .mat-icon {
-
+margin-right: 5px;
 }
 
 .search-button {
+  width: 90px;
   background: #3f51b5;
   padding: 10px;
   border: none;
