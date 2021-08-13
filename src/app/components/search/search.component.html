@@ -1,0 +1,24 @@
+<div class="search">
+
+  <div class="header-left">
+    <ul class="container">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">TV Shows</a></li>
+      <li><a href="#">Movies</a></li>
+      <li><a href="#">Trending</a></li>
+    </ul>
+  </div>
+
+
+  <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <span class="logo" routerLink="/">LOGO</span>
+    <input
+      class="search-input"
+      name="search"
+      ngModel=""
+      placeholder="Search film ..."
+    />
+    <mat-icon class="mat-icon" >search</mat-icon>
+    <button class="search-button">Search</button>
+  </form>
+</div>
