@@ -1,6 +1,6 @@
 <div class="moviesList">
-  <div class="movies">
-
+  <div class="movies" *ngFor="let m of latest_movie?.results">
+    <img src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="m?.title">
   </div>
 
 </div>

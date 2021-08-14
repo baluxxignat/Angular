@@ -29,6 +29,26 @@ export class MovieService {
     return this.httpClient.get<IMovies>(`${this._url}${endpoint.latest}`, {params: {api_key: this.api_key}});
   }
 
+  getNow_playingMovies(): Observable<IMovies> {
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.now_playing}`, {params: {api_key: this.api_key}});
+  }
+
+  getPopularMovies(): Observable<IMovies> {
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.popular}`, {params: {api_key: this.api_key}});
+  }
+
+  getTop_ratedMovies(): Observable<IMovies> {
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.top_rated}`, {params: {api_key: this.api_key}});
+  }
+
+  getUpcomingMovies(): Observable<IMovies> {
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.upcoming}`, {params: {api_key: this.api_key}});
+  }
+
+  getTrendingMovies(): Observable<IMovies> {
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.trending}`, {params: {api_key: this.api_key}});
+  }
+
   // https://api.themoviedb.org/3/genre/movie/list?api_key=5b13226e9d05d711992657ee648bec45
   getAllGenres(): Observable<any> {
     return this.httpClient.get<any>(`${this._url}${endpoint.genre}`, {params: {api_key: this.api_key}});
