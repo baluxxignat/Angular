@@ -9,6 +9,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { HomeComponent } from './components/home/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
+import { GenresComponent } from './components/genres/genres.component';
+import { GenrComponent } from './components/genr/genr.component';
 
 
 let routes: Routes = [
@@ -20,7 +22,9 @@ let routes: Routes = [
   declarations: [
     AppComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    GenresComponent,
+    GenrComponent
   ],
   imports: [
     BrowserModule,
