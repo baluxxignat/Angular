@@ -8,6 +8,7 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  public sort: string;
 
   constructor(private router: Router) { }
 
@@ -18,4 +19,8 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['search', form.value.search]);
   }
 
+  back() {
+    history.back();
+  }
 }
+

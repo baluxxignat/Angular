@@ -3,8 +3,23 @@
 
   <div class="header-left">
     <ul class="container">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Movies</a></li>
+      <li class="active"><a href="/" (click)="back()">Home</a></li>
+      <li class="filters">
+        <mat-form-field>
+          <mat-label [ngStyle]="{'color': 'white'}">Movies</mat-label>
+          <mat-select
+            panelClass="sort-select"
+            [(ngModel)]="sort"
+          >
+            <mat-option value="latest">Latest</mat-option>
+            <mat-option value="now_playing">Now playing</mat-option>
+            <mat-option value="popular">Popular</mat-option>
+            <mat-option value="upcoming">Upcoming</mat-option>
+            <mat-option value="trending">Trending</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </li>
       <li><a href="#">TV Shows</a></li>
       <li><a href="#">Trending</a></li>
     </ul>
@@ -17,7 +32,7 @@
       class="search-input"
       name="search"
       ngModel=""
-      placeholder="Search film ..."
+      placeholder="Search films ..."
     />
     <mat-icon class="mat-icon" >search</mat-icon>
     <button class="search-button">Search</button>
