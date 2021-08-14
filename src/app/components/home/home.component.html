@@ -1,6 +1,6 @@
 <div class="moviesList">
   <div *ngFor="let m of latest_movie?.results">
-    <div class="movies">
+    <div class="movies" (click)="openMovieDetails(m.id)">
       <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="m?.title">
 
       <div class="movies-description">

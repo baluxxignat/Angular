@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IMovies} from "../../../models/movies";
-import {MovieService} from "../../../services/movie.service";
+import {IMovies} from "../../models/movies";
+import {MovieService} from "../../services/movie.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,11 @@ export class HomeComponent implements OnInit {
 
   @Input() latest_movie: IMovies;
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService,
+    private router: Router,
+    private activatedRoute:ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
     this.movieService.getTop_ratedMovies().subscribe(value => {
@@ -20,4 +25,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  openMovieDetails(id: number): void {
+    this.router.navigate(['details', id]);
+  }
 }

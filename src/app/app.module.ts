@@ -7,15 +7,22 @@ import {HttpClientModule} from "@angular/common/http";
 import { SearchComponent } from './components/search/search.component';
 import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
-import { HomeComponent } from './components/home/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
 import { GenresComponent } from './components/genres/genres.component';
 import { SingleGenreComponent } from './components/genres/single_genre/single-genre.component';
+import { DetailsComponent } from './components/details/details.component';
+import { MainComponent } from './components/main/main.component';
+import {GaugeModule} from "angular-gauge";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
 
 
 let routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'search/:video-search', component: HomeComponent}
+  {path: '', component: MainComponent},
+  {path: 'search/:video-search', component: MainComponent},
+  {path: 'details/:id', component: DetailsComponent}
 ];
 
 @NgModule({
@@ -24,7 +31,9 @@ let routes: Routes = [
     SearchComponent,
     HomeComponent,
     GenresComponent,
-    SingleGenreComponent
+    SingleGenreComponent,
+    DetailsComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +42,10 @@ let routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     MatIconModule,
+    GaugeModule.forRoot(),
+    MatFormFieldModule,
+    MatSelectModule,
+    MatTabsModule,
 
 
   ],
