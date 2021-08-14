@@ -10,7 +10,7 @@ import {FormsModule} from "@angular/forms";
 import { HomeComponent } from './components/home/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
 import { GenresComponent } from './components/genres/genres.component';
-import { GenrComponent } from './components/genr/genr.component';
+import { SingleGenreComponent } from './components/genres/single_genre/single-genre.component';
 
 
 let routes: Routes = [
@@ -24,7 +24,7 @@ let routes: Routes = [
     SearchComponent,
     HomeComponent,
     GenresComponent,
-    GenrComponent
+    SingleGenreComponent
   ],
   imports: [
     BrowserModule,
