@@ -4,6 +4,7 @@ import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {IMovies} from "../models/movies";
 import {IGenre} from "../models/genre";
+import {ISingleMovie} from "../models/single-movie";
 
 const enum endpoint {
   latest = '/movie/latest',
@@ -30,8 +31,8 @@ export class MovieService {
     return this.httpClient.get<IMovies>(`${this._url}${endpoint.top_rated}`, {params: {api_key: this.api_key}});
   }
 
-  getMovieById(id: number): Observable<IMovies> {
-    return this.httpClient.get<IMovies>(`${this._url}${endpoint.get_details}` + '/' + id, {params: {api_key: this.api_key}});
+  getMovieById(id: number): Observable<ISingleMovie> {
+    return this.httpClient.get<ISingleMovie>(`${this._url}${endpoint.get_details}` + '/' + id, {params: {api_key: this.api_key}});
   }
 
   getLatestMovies(): Observable<IMovies> {

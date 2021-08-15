@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {IMovies} from "../../models/movies";
 import {ActivatedRoute} from "@angular/router";
 import {MovieService} from "../../services/movie.service";
+import {ISingleMovie} from "../../models/single-movie";
 
 @Component({
   selector: 'app-details',
@@ -11,7 +12,7 @@ import {MovieService} from "../../services/movie.service";
 export class DetailsComponent implements OnInit {
 
   @Input()
-  single_movie: IMovies;
+  single_movie: ISingleMovie;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -30,4 +31,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {}
 
 
+  back(): void {
+    history.back();
+  }
 }

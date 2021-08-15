@@ -1,29 +1,19 @@
 <app-search></app-search>
-<p>{{single_movie | json}}</p>
 
+<div class="details">
+  <div class="movie-banner">
+    <img class="movie_banner_img" src="https://image.tmdb.org/t/p/w400{{single_movie?.poster_path}}"/>
+  </div>
 
+  <div class="details_wrapper">
+    <h1 class="movie_header_title">{{single_movie?.title}}</h1>
+    <h2 class="movie_header_realease_date">{{single_movie?.release_date}}</h2>
+    <p class="movie_header_rating">
+      <span>RATING: {{single_movie?.vote_average}}</span>
+    </p>
 
-<!--<div class="bigest_wrap">-->
-<!--  <div class="details" *ngFor="let s of single_movie.results">-->
-<!--    <div class="movie-banner">-->
+    <button (click)="back()">Back</button>
+  </div>
 
-<!--      <img-->
-<!--        class="movie_banner_img"-->
-<!--      />-->
-<!--    </div>-->
+</div>
 
-<!--    <div class="content">-->
-<!--      <div class="details_wrapper">-->
-<!--        <div class="movie_header">-->
-<!--          <h1 class="movie_header_title">{{s.title}}</h1>-->
-<!--          <h2 class="movie_header_realease_date">fdg</h2>-->
-<!--          <p class="movie_header_genre">-->
-<!--            <span>Genre</span>-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--    </div>-->
-
-<!--  </div>-->
-<!--</div>-->
