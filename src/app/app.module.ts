@@ -17,10 +17,13 @@ import {GaugeModule} from "angular-gauge";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
+import {NgxPaginationModule} from "ngx-pagination";
+import {MovieResolveService} from "./services/movie-resolve.service";
+
 
 
 let routes: Routes = [
-  {path: '', component: MainComponent},
+  {path: '', component: MainComponent, resolve: {xxx: MovieResolveService}},
   {path: 'search/:video-search', component: MainComponent},
   {path: 'details/:id', component: DetailsComponent}
 ];
@@ -46,6 +49,8 @@ let routes: Routes = [
     MatFormFieldModule,
     MatSelectModule,
     MatTabsModule,
+    NgxPaginationModule,
+
 
 
   ],

@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['search', form.value.search]);
   }
 
-  public back(): void {
+  back(): void {
     history.back();
   }
 }

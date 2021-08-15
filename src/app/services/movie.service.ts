@@ -28,7 +28,7 @@ export class MovieService {
   constructor(private httpClient: HttpClient) { }
 
   getTop_ratedMovies(): Observable<IMovies> {
-    return this.httpClient.get<IMovies>(`${this._url}${endpoint.top_rated}`, {params: {api_key: this.api_key}});
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.top_rated}`, {params: {api_key: this.api_key}} );
   }
 
   getMovieById(id: number): Observable<ISingleMovie> {

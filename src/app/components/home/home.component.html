@@ -1,15 +1,17 @@
 <div class="moviesList">
-  <div *ngFor="let m of latest_movie?.results">
+  <div *ngFor="let m of top_movie | paginate: {itemsPerPage: 20, currentPage: page, totalItems:totalLength }">
     <div class="movies" (click)="openMovieDetails(m.id)">
-      <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="m?.title">
+      <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w200{{m.poster_path}}" alt="m?.title">
 
       <div class="movies-description">
-        <p class="movies-name">{{m?.title}}</p>
+        <p class="movies-name">{{m.title}}</p>
         <div class="img-release-date">
-          <p>{{m?.release_date}}</p>
+          <p>{{m.release_date}}</p>
         </div>
       </div>
     </div>
-
   </div>
+
+  <pagination-controls (pageChange)="page = $event" (pageChange)="handlePageChange($event)"></pagination-controls>
+
 </div>

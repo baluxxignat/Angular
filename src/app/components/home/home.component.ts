@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IMovies} from "../../models/movies";
 import {MovieService} from "../../services/movie.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-home',
@@ -10,21 +11,41 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  @Input() latest_movie: IMovies;
+
+
+
+  totalLength: number;
+  page: number = 1;
+  handlePageChange(event: any) {
+    this.page = event;
+    console.log(this.page);
+  }
+  
+
+  @Input()
+  top_movie: any;     //не смог устранить ошибку несоответствия типа данных объекта data
+                      // и интерфейса IMovies (после имплиментации resolva)
 
   constructor(
-    private movieService: MovieService,
+    private activatedRoute: ActivatedRoute,
     private router: Router,
-    ) { }
+    ) {
+    this.activatedRoute.data.subscribe(value => {
+      this.top_movie = value.xxx.results;
+      this.totalLength = value.xxx.total_pages
+
+
+      console.log(this.top_movie);
+    })
+  }
 
   ngOnInit(): void {
-    this.movieService.getTop_ratedMovies().subscribe(value => {
-      this.latest_movie = value
-      //console.log(this.latest_movie);
-    });
   }
 
   openMovieDetails(id: number): void {
     this.router.navigate(['details', id]);
   }
+
+
+
 }
