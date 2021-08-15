@@ -1,0 +1,36 @@
+.bigest_wrap {
+  background-color: chocolate;
+  width: 900px;
+}
+
+.details_wrapper {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.movie_banner {
+  height: 442px;
+  overflow: hidden;
+}
+
+.movie_banner_img {
+  width: 100%;
+  filter: blur(5px);
+}
+
+.content {
+  text-align: center;
+}
+
+.movie_header_title {
+  font-size: 70px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 70px;
+}
+
+
+.movie_header_realease_date {
+  color: #fff;
+  font-weight: 700;
+}

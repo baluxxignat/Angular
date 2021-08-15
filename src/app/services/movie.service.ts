@@ -12,7 +12,8 @@ const enum endpoint {
   top_rated = '/movie/top_rated',
   upcoming = '/movie/upcoming',
   trending = '/trending/all/week',
-  genre = '/genre/movie/list'
+  genre = '/genre/movie/list',
+  get_details = '/movie'
 }
 
 @Injectable({
@@ -25,6 +26,14 @@ export class MovieService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getTop_ratedMovies(): Observable<IMovies> {
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.top_rated}`, {params: {api_key: this.api_key}});
+  }
+
+  getMovieById(id: number): Observable<IMovies> {
+    return this.httpClient.get<IMovies>(`${this._url}${endpoint.get_details}` + '/' + id, {params: {api_key: this.api_key}});
+  }
+
   getLatestMovies(): Observable<IMovies> {
     return this.httpClient.get<IMovies>(`${this._url}${endpoint.latest}`, {params: {api_key: this.api_key}});
   }
@@ -35,10 +44,6 @@ export class MovieService {
 
   getPopularMovies(): Observable<IMovies> {
     return this.httpClient.get<IMovies>(`${this._url}${endpoint.popular}`, {params: {api_key: this.api_key}});
-  }
-
-  getTop_ratedMovies(): Observable<IMovies> {
-    return this.httpClient.get<IMovies>(`${this._url}${endpoint.top_rated}`, {params: {api_key: this.api_key}});
   }
 
   getUpcomingMovies(): Observable<IMovies> {
