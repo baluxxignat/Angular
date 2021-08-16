@@ -10,6 +10,7 @@
           <mat-select
             panelClass="sort-select"
             [(ngModel)]="sort"
+            (selectionChange)="searchMovie()"
           >
             <mat-option value="latest">Latest</mat-option>
             <mat-option value="now_playing">Now playing</mat-option>

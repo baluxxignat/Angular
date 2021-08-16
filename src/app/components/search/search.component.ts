@@ -22,5 +22,10 @@ export class SearchComponent implements OnInit {
   back(): void {
     history.back();
   }
+
+
+  searchMovie() {
+
+  }
 }
 
